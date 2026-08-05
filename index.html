@@ -227,35 +227,53 @@
     </footer>
 
     <script>
-        // Quantity Controls
-        const qtyInput = document.getElementById('qty-input');
-        document.getElementById('qty-minus').addEventListener('click', () => {
-            let val = parseInt(qtyInput.value);
-            if (val > 1) qtyInput.value = val - 1;
-        });
-        document.getElementById('qty-plus').addEventListener('click', () => {
-            let val = parseInt(qtyInput.value);
-            qtyInput.value = val + 1;
-        });
+    // Quantity Controls
+    const qtyInput = document.getElementById('qty-input');
+    document.getElementById('qty-minus').addEventListener('click', () => {
+        let val = parseInt(qtyInput.value);
+        if (val > 1) qtyInput.value = val - 1;
+    });
+    document.getElementById('qty-plus').addEventListener('click', () => {
+        let val = parseInt(qtyInput.value);
+        qtyInput.value = val + 1;
+    });
 
-        // Accordion functionality
-        const triggers = document.querySelectorAll('.accordion-trigger');
-        triggers.forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                const item = trigger.parentElement;
-                const isOpen = item.classList.contains('open');
-                
-                document.querySelectorAll('.accordion-item').forEach(el => {
-                    el.classList.remove('open');
-                    el.querySelector('.accordion-icon').textContent = '+';
-                });
-                
-                if (!isOpen) {
-                    item.classList.add('open');
-                    item.querySelector('.accordion-icon').textContent = '−';
-                }
+    // Accordion functionality
+    const triggers = document.querySelectorAll('.accordion-trigger');
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const item = trigger.parentElement;
+            const isOpen = item.classList.contains('open');
+            
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('open');
+                el.querySelector('.accordion-icon').textContent = '+';
             });
+            
+            if (!isOpen) {
+                item.classList.add('open');
+                item.querySelector('.accordion-icon').textContent = '−';
+            }
         });
-    </script>
+    });
+
+    // Auto-open target accordions when clicking nav links
+    document.querySelectorAll('.nav-link, .footer-list a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const targetAccordion = document.querySelector(href + '.accordion-item');
+                if (targetAccordion) {
+                    document.querySelectorAll('.accordion-item').forEach(el => {
+                        el.classList.remove('open');
+                        el.querySelector('.accordion-icon').textContent = '+';
+                    });
+                    targetAccordion.classList.add('open');
+                    targetAccordion.querySelector('.accordion-icon').textContent = '−';
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>

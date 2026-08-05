@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>
+      (function() {
+        const secret = ""; // Replace with your chosen password
+        const input = prompt("Enter password to access this site:");
+        if (input !== secret) {
+          document.write("<h1 style='color:white;background:#121212;height:100vh;display:flex;align-items:center;justify-content:center;font-family:sans-serif;'>Access Denied</h1>");
+          window.stop();
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->

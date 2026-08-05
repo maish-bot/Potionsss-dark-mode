@@ -41,7 +41,7 @@ body {
 .product-section,
 .accordion-item,
 .review-stars-summary {
-    scroll-margin-top: 100px; /* Provides top buffer beneath the sticky header */
+    scroll-margin-top: 100px;
 }
 
 /* --- ANNOUNCEMENT BAR --- */
@@ -600,11 +600,11 @@ body {
     letter-spacing: 1.5px;
 }
 
-/* --- MOBILE BREAKPOINTS --- */
+/* --- MOBILE BREAKPOINTS & LAYOUT OPTIMIZATIONS --- */
 @media (max-width: 990px) {
     .product-grid { 
         grid-template-columns: 1fr; 
-        gap: 2.5rem;
+        gap: 2rem;
     }
     .footer-grid { 
         grid-template-columns: 1fr 1fr; 
@@ -614,39 +614,198 @@ body {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 1.25rem;
+        padding: 0 1rem;
+    }
+
+    .announcement-bar {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .navbar .logo {
+        font-size: 1.5rem;
+    }
+
+    .header-buy-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.75rem;
+        min-height: 38px;
+    }
+
+    .social-link {
+        min-width: 38px;
+        min-height: 38px;
+    }
+
+    .ticker-bar {
+        padding: 0.5rem 0;
+    }
+
+    .ticker-track {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
     }
 
     .nav-links { 
         display: none; 
     }
 
+    .product-section {
+        padding: 1.5rem 0 2.5rem 0;
+    }
+
+    .product-title {
+        font-size: 2rem;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .review-stars-summary {
+        font-size: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .price-container {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .control-group {
+        margin-bottom: 1rem;
+    }
+
+    .group-label {
+        font-size: 0.68rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .pill-btn {
+        min-height: 40px;
+        padding: 0.4rem 1.25rem;
+        font-size: 0.8rem;
+    }
+
     .purchase-stack {
         grid-template-columns: 110px 1fr;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .quantity-selector {
+        min-height: 46px;
+    }
+
+    .qty-btn {
+        width: 36px;
+        min-height: 46px;
+        font-size: 1rem;
+    }
+
+    #qty-input {
+        font-size: 0.95rem;
+    }
+
+    .add-to-cart-btn {
+        min-height: 46px;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+
+    .sketch-tagline {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .sketch-bullet-list {
+        margin-bottom: 1.25rem;
+    }
+
+    .sketch-bullet-list li {
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .accordion-trigger {
+        min-height: 48px;
+        font-size: 0.85rem;
+        padding: 0.5rem 0;
+    }
+
+    .accordion-icon {
+        font-size: 1.1rem;
+    }
+
+    .accordion-content {
+        padding-bottom: 1rem;
+        font-size: 0.78rem;
+        line-height: 1.5;
+    }
+
+    .what-it-does-box {
+        margin-top: 1.25rem;
+        padding: 1rem;
+    }
+
+    .what-heading {
+        font-size: 0.85rem;
+    }
+
+    .what-text,
+    .what-it-does-box li {
+        font-size: 0.78rem;
+        line-height: 1.4;
+    }
+
+    .footer {
+        padding: 2.5rem 0 1.5rem 0;
     }
 
     .footer-grid { 
         grid-template-columns: 1fr; 
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-heading {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline,
+    .footer-list a,
+    .footer-text {
+        font-size: 0.78rem;
     }
 
     .footer-bottom { 
         flex-direction: column; 
-        gap: 1.25rem; 
+        gap: 1rem; 
         text-align: center; 
+        font-size: 0.68rem;
+        padding-top: 1.25rem;
+    }
+
+    .payment-badges {
+        font-size: 0.7rem;
     }
 }
 
 @media (max-width: 480px) {
-    .product-section {
-        padding: 1.5rem 0 3rem 0;
-    }
-
-    .purchase-stack {
-        grid-template-columns: 1fr;
+    .product-gallery {
+        gap: 0.75rem;
     }
 
     .gallery-row {
         gap: 0.75rem;
+    }
+
+    .purchase-stack {
+        grid-template-columns: 1fr;
     }
 
     .pill-btn, 
